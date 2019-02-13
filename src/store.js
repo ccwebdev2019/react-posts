@@ -4,10 +4,7 @@ import thunk from "redux-thunk";
 import rootReducer from "./reducers/index";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const middleware = [
-  require("redux-immutable-state-invariant").default(),
-  thunk
-];
+const middleware = [thunk];
 const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(...middleware))
